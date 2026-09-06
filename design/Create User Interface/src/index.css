@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Manrope', sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+
+  --color-coral: var(--coral);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
+  --color-blue-tint: var(--blue-tint);
+}
+
+:root {
+  --background: #FFF7E3; /* Cream */
+  --foreground: #171717; /* Ink */
+
+  --card: #FFFFFF;
+  --card-foreground: #171717;
+
+  --primary: #FFFFFF; /* White */
+  --primary-foreground: #FFFFFF;
+
+  --accent: #FFD447; /* Comic Yellow */
+  --accent-foreground: #171717;
+
+  --coral: #FF6B61; /* Comic Coral */
+  --blue: #5578F5; /* Board Game Blue */
+  --blue-tint: #EAF0FF; /* Light blue section wash */
+  --green: #7BC96F; /* Fresh Green */
+
+  --muted: #D9D4C8; /* Warm Stone */
+  --muted-foreground: #68645C; /* Warm Gray */
+
+  --border: #171717;
+
+  --radius: 12px;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.comic-shadow {
+  box-shadow: 4px 4px 0px 0px var(--foreground);
+}
+
+.comic-shadow-sm {
+  box-shadow: 2px 2px 0px 0px var(--foreground);
+}
+
+.comic-shadow-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--foreground);
+}
+
+.comic-shadow-hover {
+  transition: all 0.2s ease;
+}
+
+.halftone-bg {
+  /* Using an extremely lightweight base64 PNG instead of SVG for the halftone pattern to prevent rendering timeouts */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIklEQVQoU2P8z8Dwn4EKoAHEGPErRBZFF0S1EFlkR1kTAByaAwe0V6R0AAAAAElFTkSuQmCC");
+  background-repeat: repeat;
+  opacity: 0.1;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
